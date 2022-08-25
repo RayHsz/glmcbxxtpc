@@ -3,7 +3,7 @@
       <el-tag
           :key="tag.name"
           v-for="(tag,index) in tags"
-          :closable="tag.name!=='home'"
+          :closable="tag.name!=='首页'"
           :disable-transitions="false"
           :effect="$router.name===tag.name ? 'dark':'plain' "
           @click="changeMenu(tag)"
