@@ -25,7 +25,7 @@ const routes=[
             },
             {
                 path:'/bxd',
-                name:"保修单",
+                name:"报修单",
                 component:bxdPage,
             },
             {

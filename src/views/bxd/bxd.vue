@@ -1,5 +1,5 @@
 <template>
-  <div>保修单</div>
+  <div>报修单</div>
 </template>
 
 <script>
