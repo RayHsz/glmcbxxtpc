@@ -13,7 +13,7 @@ const store =createStore({
         tabsList:[
             {
                 path:'/',
-                name:'home',
+                name:'首页',
                 label:'首页',
                 icon:'home'
             }
