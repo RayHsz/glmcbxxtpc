@@ -32,11 +32,18 @@ export default {
 }
 .common-layout{
   height: 100%;
+  width: 100%;
+  float: left;
   & > .el-container{
     height: 100%;
+    width: 100%;
+    float: left;
     & > .el-aside{
       height: 100%;
       background: #9ea4b8 ;
+    }
+    & > .el-container{
+      width: 800px;
     }
   }
 }
