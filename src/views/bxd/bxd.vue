@@ -122,7 +122,7 @@
   </div>
 
   <el-table
-      :data="tableData"
+      :data="tableData.slice((currentPage-1)*PageSize,currentPage*PageSize)"
       height="450"
       border
       style="width: 100%"
@@ -188,14 +188,39 @@
         <el-button type="warning" class="anniu1">警告按钮</el-button>
     </el-table-column>
   </el-table>
-
+  <div class="tabListPage">
+    <el-pagination @size-change="handleSizeChange"
+                   @current-change="handleCurrentChange"
+                   :current-page="currentPage"
+                   :page-sizes="pageSizes"
+                   :page-size="PageSize" layout="total, sizes, prev, pager, next, jumper"
+                   :total="totalCount">
+    </el-pagination>
+  </div>
 </template>
 
 <script>
 export default {
   name: "bxdBar",
+  methods: {
+    handleSizeChange(val) {
+      // 改变每页显示的条数
+      this.PageSize=val
+      // 注意：在改变每页显示的条数时，要将页码显示到第一页
+      this.currentPage=1
+    },
+    handleCurrentChange(val) {
+      this.currentPage=val
+    }
+  },
   data() {
     return {
+      currentPage:2,
+      totalCount:14,
+      // 个数选择器（可修改）
+      pageSizes:[1,2,4,8],
+      // 默认每页显示的条数（可修改）
+      PageSize:1,
       value1: '',
       value2: '',
       value3: '',
@@ -240,6 +265,34 @@ export default {
         address: '上海市普陀区金沙江路 1518 弄'
       }, {
         date: '2016-05-06',
+        name: '王小虎',
+        address: '上海市普陀区金沙江路 1518 弄'
+      }, {
+        date: '2016-05-07',
+        name: '王小虎',
+        address: '上海市普陀区金沙江路 1518 弄'
+      }, {
+        date: '2016-05-07',
+        name: '王小虎',
+        address: '上海市普陀区金沙江路 1518 弄'
+      }, {
+        date: '2016-05-07',
+        name: '王小虎',
+        address: '上海市普陀区金沙江路 1518 弄'
+      }, {
+        date: '2016-05-07',
+        name: '王小虎',
+        address: '上海市普陀区金沙江路 1518 弄'
+      }, {
+        date: '2016-05-07',
+        name: '王小虎',
+        address: '上海市普陀区金沙江路 1518 弄'
+      }, {
+        date: '2016-05-07',
+        name: '王小虎',
+        address: '上海市普陀区金沙江路 1518 弄'
+      }, {
+        date: '2016-05-07',
         name: '王小虎',
         address: '上海市普陀区金沙江路 1518 弄'
       }, {
